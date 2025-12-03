@@ -1,5 +1,5 @@
 import { useAuth } from '@/contexts/AuthContext';
-import { Building2, Users, FileText, Clock, TrendingUp, Activity } from 'lucide-react';
+import { Building2, Users, TrendingUp, Activity, Settings } from 'lucide-react';
 
 const stats = [
   {
@@ -8,7 +8,7 @@ const stats = [
     change: '+12%',
     trend: 'up',
     icon: Building2,
-    color: 'from-primary to-purple-500',
+    color: 'from-primary to-primary/70',
   },
   {
     label: 'Active Users',
@@ -16,23 +16,7 @@ const stats = [
     change: '+8%',
     trend: 'up',
     icon: Users,
-    color: 'from-accent to-blue-500',
-  },
-  {
-    label: 'Active Projects',
-    value: '156',
-    change: '+23%',
-    trend: 'up',
-    icon: FileText,
-    color: 'from-success to-emerald-400',
-  },
-  {
-    label: 'Hours Logged',
-    value: '8,456',
-    change: '+5%',
-    trend: 'up',
-    icon: Clock,
-    color: 'from-warning to-orange-400',
+    color: 'from-accent to-accent/70',
   },
 ];
 
@@ -42,7 +26,7 @@ export default function Dashboard() {
   return (
     <div className="space-y-8">
       {/* Welcome section */}
-      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary via-primary/90 to-purple-600 p-8 text-primary-foreground">
+      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary via-primary/90 to-primary/70 p-8 text-primary-foreground">
         <div className="absolute top-0 right-0 w-64 h-64 bg-accent/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
         <div className="absolute bottom-0 left-0 w-48 h-48 bg-primary-foreground/10 rounded-full blur-2xl translate-y-1/2 -translate-x-1/2" />
         
@@ -59,7 +43,7 @@ export default function Dashboard() {
       </div>
 
       {/* Stats grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {stats.map((stat, index) => (
           <div
             key={stat.label}
@@ -124,7 +108,7 @@ export default function Dashboard() {
             {[
               { label: 'Create Tenant', icon: Building2, href: '/dashboard/tenants/new' },
               { label: 'Add User', icon: Users, href: '/dashboard/users/new' },
-              { label: 'View Reports', icon: FileText, href: '/dashboard/reports' },
+              { label: 'Settings', icon: Settings, href: '/dashboard/settings' },
             ].map((action) => (
               <button
                 key={action.label}

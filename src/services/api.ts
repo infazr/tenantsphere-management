@@ -9,6 +9,7 @@ import {
   GetTenantsParams,
   PaginatedResponse,
   Module,
+  ChangePasswordRequest,
 } from '@/types/api';
 
 const API_BASE_URL = 'https://swtt4qvvptprbix33gretpwtn40leddi.lambda-url.us-east-1.on.aws';
@@ -52,6 +53,11 @@ class ApiService {
 
   async signOut(): Promise<BaseResponse<boolean>> {
     const response = await this.client.post<BaseResponse<boolean>>('/api/v1/Auth/signout');
+    return response.data;
+  }
+
+  async changePassword(data: ChangePasswordRequest): Promise<boolean> {
+    const response = await this.client.post<boolean>('/api/v1/Auth/change-password', data);
     return response.data;
   }
 
