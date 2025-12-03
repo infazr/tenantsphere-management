@@ -5,58 +5,50 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --background: 222 47% 97%;
-    --foreground: 222 47% 11%;
+  /* Ocean Blue Theme (Default) */
+  :root,
+  :root.theme-ocean {
+    --background: 210 40% 98%;
+    --foreground: 210 40% 11%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
+    --card-foreground: 210 40% 11%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
+    --popover-foreground: 210 40% 11%;
 
-    --primary: 234 89% 60%;
+    --primary: 210 100% 50%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 14% 96%;
-    --secondary-foreground: 222 47% 11%;
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 210 40% 11%;
 
-    --muted: 220 14% 96%;
-    --muted-foreground: 220 9% 46%;
+    --muted: 210 20% 96%;
+    --muted-foreground: 210 15% 46%;
 
-    --accent: 187 90% 51%;
-    --accent-foreground: 222 47% 11%;
+    --accent: 185 84% 39%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 234 89% 60%;
+    --border: 210 20% 91%;
+    --input: 210 20% 91%;
+    --ring: 210 100% 50%;
 
     --radius: 0.75rem;
 
-    /* Custom Design Tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(234, 89%, 60%) 0%, hsl(262, 83%, 58%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(187, 90%, 51%) 0%, hsl(234, 89%, 60%) 100%);
-    --gradient-dark: linear-gradient(135deg, hsl(222, 47%, 11%) 0%, hsl(234, 40%, 20%) 100%);
-    --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
-    
-    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-    --shadow-glow: 0 0 40px hsl(234, 89%, 60%, 0.3);
-    --shadow-glow-accent: 0 0 40px hsl(187, 90%, 51%, 0.3);
+    --shadow-glow: 0 0 40px hsl(210 100% 50% / 0.3);
+    --shadow-glow-accent: 0 0 40px hsl(185 84% 39% / 0.3);
 
-    --sidebar-background: 222 47% 11%;
-    --sidebar-foreground: 220 14% 96%;
-    --sidebar-primary: 234 89% 60%;
+    --sidebar-background: 210 40% 11%;
+    --sidebar-foreground: 210 20% 96%;
+    --sidebar-primary: 210 100% 50%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 234 40% 20%;
-    --sidebar-accent-foreground: 220 14% 96%;
-    --sidebar-border: 234 30% 25%;
-    --sidebar-ring: 234 89% 60%;
+    --sidebar-accent: 210 35% 20%;
+    --sidebar-accent-foreground: 210 20% 96%;
+    --sidebar-border: 210 30% 25%;
+    --sidebar-ring: 210 100% 50%;
 
     /* Status Colors */
     --success: 142 76% 36%;
@@ -67,34 +59,115 @@
     --info-foreground: 0 0% 100%;
   }
 
+  /* Emerald Theme */
+  :root.theme-emerald {
+    --primary: 160 84% 39%;
+    --ring: 160 84% 39%;
+    --accent: 142 76% 36%;
+    --accent-foreground: 0 0% 100%;
+    --shadow-glow: 0 0 40px hsl(160 84% 39% / 0.3);
+    --shadow-glow-accent: 0 0 40px hsl(142 76% 36% / 0.3);
+    --sidebar-primary: 160 84% 39%;
+    --sidebar-accent: 160 35% 20%;
+    --sidebar-ring: 160 84% 39%;
+  }
+
+  /* Sunset Theme */
+  :root.theme-sunset {
+    --primary: 25 95% 53%;
+    --ring: 25 95% 53%;
+    --accent: 38 92% 50%;
+    --accent-foreground: 0 0% 100%;
+    --shadow-glow: 0 0 40px hsl(25 95% 53% / 0.3);
+    --shadow-glow-accent: 0 0 40px hsl(38 92% 50% / 0.3);
+    --sidebar-primary: 25 95% 53%;
+    --sidebar-accent: 25 35% 20%;
+    --sidebar-ring: 25 95% 53%;
+  }
+
+  /* Rose Theme */
+  :root.theme-rose {
+    --primary: 350 89% 60%;
+    --ring: 350 89% 60%;
+    --accent: 330 80% 55%;
+    --accent-foreground: 0 0% 100%;
+    --shadow-glow: 0 0 40px hsl(350 89% 60% / 0.3);
+    --shadow-glow-accent: 0 0 40px hsl(330 80% 55% / 0.3);
+    --sidebar-primary: 350 89% 60%;
+    --sidebar-accent: 350 35% 20%;
+    --sidebar-ring: 350 89% 60%;
+  }
+
+  /* Slate Theme */
+  :root.theme-slate {
+    --primary: 215 20% 45%;
+    --ring: 215 20% 45%;
+    --accent: 215 25% 35%;
+    --accent-foreground: 0 0% 100%;
+    --shadow-glow: 0 0 40px hsl(215 20% 45% / 0.3);
+    --shadow-glow-accent: 0 0 40px hsl(215 25% 35% / 0.3);
+    --sidebar-primary: 215 20% 45%;
+    --sidebar-accent: 215 20% 25%;
+    --sidebar-ring: 215 20% 45%;
+  }
+
+  /* Dark mode overrides */
   .dark {
-    --background: 222 47% 6%;
-    --foreground: 220 14% 96%;
+    --background: 210 40% 6%;
+    --foreground: 210 20% 96%;
 
-    --card: 222 47% 9%;
-    --card-foreground: 220 14% 96%;
+    --card: 210 40% 9%;
+    --card-foreground: 210 20% 96%;
 
-    --popover: 222 47% 9%;
-    --popover-foreground: 220 14% 96%;
+    --popover: 210 40% 9%;
+    --popover-foreground: 210 20% 96%;
 
-    --primary: 234 89% 65%;
-    --primary-foreground: 0 0% 100%;
+    --secondary: 210 30% 18%;
+    --secondary-foreground: 210 20% 96%;
 
-    --secondary: 234 30% 18%;
-    --secondary-foreground: 220 14% 96%;
-
-    --muted: 234 30% 18%;
-    --muted-foreground: 220 9% 60%;
-
-    --accent: 187 90% 51%;
-    --accent-foreground: 222 47% 11%;
+    --muted: 210 30% 18%;
+    --muted-foreground: 210 15% 60%;
 
     --destructive: 0 62% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 234 30% 20%;
-    --input: 234 30% 20%;
-    --ring: 234 89% 65%;
+    --border: 210 30% 20%;
+    --input: 210 30% 20%;
+  }
+
+  /* Dark mode + Ocean */
+  .dark.theme-ocean {
+    --primary: 210 100% 55%;
+    --ring: 210 100% 55%;
+    --sidebar-background: 210 40% 8%;
+  }
+
+  /* Dark mode + Emerald */
+  .dark.theme-emerald {
+    --primary: 160 84% 45%;
+    --ring: 160 84% 45%;
+    --sidebar-background: 160 35% 8%;
+  }
+
+  /* Dark mode + Sunset */
+  .dark.theme-sunset {
+    --primary: 25 95% 58%;
+    --ring: 25 95% 58%;
+    --sidebar-background: 25 30% 8%;
+  }
+
+  /* Dark mode + Rose */
+  .dark.theme-rose {
+    --primary: 350 89% 65%;
+    --ring: 350 89% 65%;
+    --sidebar-background: 350 30% 8%;
+  }
+
+  /* Dark mode + Slate */
+  .dark.theme-slate {
+    --primary: 215 20% 55%;
+    --ring: 215 20% 55%;
+    --sidebar-background: 215 20% 8%;
   }
 }
 
